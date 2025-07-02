@@ -4,32 +4,41 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+let [counter,setCounter]=useState(15) // array return krta he,jiska 2nd element function hota he,aur 1st variable hota he
+//2nd wala jp function h
+//variable ki default value 15 hogi 
+//variable ke type ke hisab se default value rakhenge hum
+ // let counter=5
+
+ const addValue= () => {
+  counter++
+  setCounter(counter)
+ }
+ const removeValue= () => {
+  if(counter<=0){
+    console.log('cant be neg value')
+    setCounter(counter=0)
+  }
+  else{
+    setCounter(counter-=1)
+  }
+ }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <>      
+        <h1>chai aur react</h1>
+        <h2>counter value:{counter}</h2>
+        <button onClick={addValue}>Add Value:{counter}</button>
+        <br />
+        <br />
+        <button onClick={removeValue}>Remove Value:{counter}</button>
+        <p>footer:{counter}</p>
     </>
   )
 }
 
 export default App
+
+
+//ui updatation ko react  handle krta he
