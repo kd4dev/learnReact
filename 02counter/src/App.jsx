@@ -10,6 +10,7 @@ let [counter,setCounter]=useState(15) // array return krta he,jiska 2nd element 
 //variable ki default value 15 hogi 
 //variable ke type ke hisab se default value rakhenge hum
  // let counter=5
+ //setCounter callback leta he
 
  const addValue= () => {
   counter++
@@ -21,7 +22,12 @@ let [counter,setCounter]=useState(15) // array return krta he,jiska 2nd element 
     setCounter(counter=0)
   }
   else{
-    setCounter(counter-=1)
+    setCounter(counter-1)//-->jitni barr likha he utni bar kam ho jayega
+    setCounter((prevCounter) => prevCounter - 1) //ye peechali state he
+     setCounter((prevCounter) => prevCounter - 1)//par ye syntax use kiya toh nahi hoga,hum agar proper call back se bataye ki aisa karo toh woh bundle nahi banata
+     //wrna bina callback ke 4 baar likhate toh woh bundle banata aur sirf ek bar hota
+     //par agar counter=counter-1 aisa kuch assignment wala use krte toh woh 4 bar ho jyega
+     setCounter((prevCounter) => prevCounter - 1) 
   }
  }
 
