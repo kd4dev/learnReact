@@ -50,3 +50,4 @@ export default App;
 // onClick (left wala) React ka event listener jaisa hai, jo button pe click hone par function call karta hai.
 // handleClick ek prop hai, jo aap parent (App.jsx) se pass karte ho. Isme aap koi bhi function de sakte ho (jaise () => setColor("red")).
 // Jab button pe click hota hai, to onClick={handleClick} likhne se, woh parent se aaya hua function run ho jata hai.
+//onclick function ka reference mangta he isiliye callback use kiya normal use krte toh color nahi jaa pata aur color pass kr dete normal function me toh woh tabhi ke tabhi call ho jata he
